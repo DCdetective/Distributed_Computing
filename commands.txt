@@ -1,0 +1,20 @@
+starting zookper
+bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+
+start kafka broker
+bin\windows\kafka-server-start.bat config\server.properties
+
+
+kafka terminal to check data ingestion 
+bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic iot-sensors --from-beginning
+
+
+data generation and kafka ingestion 
+python .\producers\sensor_producer.py
+
+kafka data into database 
+python consumer_to_db.py
+
+
+to the updated DB SPARK analysis code 
+python spark_test.py

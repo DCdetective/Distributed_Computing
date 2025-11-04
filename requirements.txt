@@ -1,0 +1,6 @@
+pyspark
+kafka-python
+cassandra-driver
+apache-airflow
+streamlit
+pandas
